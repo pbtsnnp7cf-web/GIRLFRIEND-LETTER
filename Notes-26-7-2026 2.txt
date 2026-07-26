@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Baby ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(#ffdbea, #fff7fb);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 25px;
+    animation: float 8s infinite;
+    opacity: .8;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+.card {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(10px);
+    border-radius: 35px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(255,120,170,.25);
+}
+
+
+/* Password */
+input {
+    padding: 14px;
+    border-radius: 25px;
+    border: 2px solid #ffc4da;
+    text-align:center;
+    font-size:16px;
+}
+
+button {
+    margin-top:15px;
+    background:#ff8fb8;
+    color:white;
+    border:none;
+    padding:14px 30px;
+    border-radius:30px;
+    font-size:16px;
+}
+
+
+/* Envelope */
+.envelope {
+    width:180px;
+    height:120px;
+    background:#ffb6d2;
+    margin:auto;
+    position:relative;
+    cursor:pointer;
+    border-radius:10px;
+}
+
+.flap {
+    position:absolute;
+    width:0;
+    height:0;
+    border-left:90px solid transparent;
+    border-right:90px solid transparent;
+    border-top:70px solid #ff8fb8;
+    top:0;
+    transition:1s;
+    transform-origin:top;
+}
+
+.envelope.open .flap {
+    transform:rotateX(180deg);
+}
+
+.paper {
+    background:white;
+    position:absolute;
+    width:140px;
+    height:90px;
+    left:20px;
+    top:20px;
+    border-radius:8px;
+    transition:1s;
+}
+
+.envelope.open .paper {
+    transform:translateY(-80px);
+}
+
+
+/* Letter */
+#letter {
+    display:none;
+}
+
+h1 {
+    color:#ff6fa5;
+}
+
+p {
+    color:#555;
+    font-size:17px;
+    line-height:1.7;
+}
+
+
+/* Polaroids */
+.photos {
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.polaroid {
+    background:white;
+    padding:10px;
+    width:150px;
+    box-shadow:0 5px 15px #ddd;
+    transform:rotate(-5deg);
+}
+
+.polaroid:nth-child(2){
+    transform:rotate(5deg);
+}
+
+.polaroid img {
+    width:100%;
+    height:130px;
+    object-fit:cover;
+}
+
+
+/* Reasons */
+.reason {
+    background:#fff0f6;
+    padding:12px;
+    border-radius:20px;
+    margin:10px;
+    color:#555;
+}
+
+.bear {
+    font-size:60px;
+}
+
+</style>
+
+
+<script>
+
+function unlock(){
+
+let pass=document.getElementById("password").value;
+
+if(pass=="baby"){
+
+document.getElementById("lock").style.display="none";
+document.getElementById("letter").style.display="block";
+
+}
+
+else{
+
+alert("Wrong password 🧸💗");
+
+}
+
+}
+
+
+function openEnvelope(){
+
+document.querySelector(".envelope").classList.add("open");
+
+}
+
+</script>
+
+
+</head>
+
+
+<body>
+
+
+<div class="heart" style="left:10%">❤️</div>
+<div class="heart" style="left:40%;animation-delay:2s">💕</div>
+<div class="heart" style="left:80%;animation-delay:4s">💗</div>
+
+
+<div class="card">
+
+
+<div id="lock">
+
+<div class="bear">🧸</div>
+
+<h1>A Surprise For You 💌</h1>
+
+<p>
+Enter our secret password to open your letter ❤️
+</p>
+
+<input id="password" type="password" placeholder="Password">
+
+<br>
+
+<button onclick="unlock()">Unlock 💗</button>
+
+</div>
+
+
+
+<div id="letter">
+
+
+<div onclick="openEnvelope()" class="envelope">
+
+<div class="flap"></div>
+<div class="paper"></div>
+
+</div>
+
+
+<h1>To My Baby ❤️</h1>
+
+
+<p>
+Happy Girlfriend Day baby 🧸💕
+</p>
+
+
+<p>
+I made this little website because you deserve something special.
+Thank you for being the person who makes me smile, supports me,
+and makes my life so much better.
+</p>
+
+
+<p>
+Every memory with you means so much to me. I love the way you care
+for me, the way you make me laugh, and the way you make ordinary
+moments feel special.
+</p>
+
+
+<h2 style="color:#ff6fa5;">Our Memories 📸</h2>
+
+
+<div class="photos">
+
+<div class="polaroid">
+<img src="YOUR_IMAGE_LINK_HERE">
+<p>Our moment ❤️</p>
+</div>
+
+<div class="polaroid">
+<img src="YOUR_IMAGE_LINK_HERE">
+<p>My favorite person 💕</p>
+</div>
+
+</div>
+
+
+
+<h2 style="color:#ff6fa5;">
+Reasons Why I Love You 💗
+</h2>
+
+
+<div class="reason">
+💕 You always make me smile
+</div>
+
+<div class="reason">
+🧸 You make me feel loved
+</div>
+
+<div class="reason">
+❤️ You support me when I need it
+</div>
+
+<div class="reason">
+✨ You are beautiful inside and out
+</div>
+
+
+<p>
+Thank you for being mine baby ❤️
+I love you forever 🧸💕
+</p>
+
+
+</div>
+
+
+</div>
+
+</body>
+</html>
